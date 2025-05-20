@@ -47,5 +47,8 @@ class BlogApiControllerTest {
         final String title = "title";
         final String content = "content";
         final AddArticleRequest userRequest = new AddArticleRequest(title, content);
+
+        final String requestBody = objectMapper.writeValueAsString(userRequest);
+
     }
 }
