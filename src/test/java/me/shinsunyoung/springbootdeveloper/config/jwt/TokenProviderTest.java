@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.test.context.TestPropertySource;
 
 import java.time.Duration;
 import java.util.Date;
@@ -17,6 +18,10 @@ import java.util.Map;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
+@TestPropertySource(properties = {
+        "jwt.issuer=ajufresh@gmail.com",
+        "jwt.secretKey=c3R1ZHktc3ByaW5nYm9vdA=="
+})
 class TokenProviderTest {
 
     @Autowired
